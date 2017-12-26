@@ -8,3 +8,5 @@
 // +----------------------------------------------------------------------
 
 $router->add('/api/request', 'App\\Controllers\\Api\\Index::request');
+
+$router->add('/api/timeout', 'App\\Controllers\\Api\\Index::timeout');
