@@ -6,18 +6,19 @@
 // +----------------------------------------------------------------------
 // | Author: limx <715557344@qq.com> <https://github.com/limingxinleo>
 // +----------------------------------------------------------------------
-namespace App\Common\HttpClient;
+namespace Tests\Biz\App\Common\HttpClient;
 
 use App\Biz\BizException;
 use App\Biz\CodeException;
 use App\Common\Enums\ErrorCode;
 use App\Utils\Curl;
+use App\Common\HttpClient\Client;
 
 class TestClient extends Client
 {
     public function test()
     {
-        $route = '/test/api/api';
+        $route = '/api/request';
         $params = ['test_client' => 1];
         return $this->httpGet($route, $params);
     }
@@ -26,5 +27,4 @@ class TestClient extends Client
     {
         return 'test';
     }
-
 }

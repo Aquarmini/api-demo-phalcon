@@ -9,7 +9,7 @@
 namespace Tests\Biz\Utils;
 
 use App\Utils\Response;
-use \UnitTestCase;
+use Tests\UnitTestCase;
 
 /**
  * Class UnitTest
@@ -27,7 +27,5 @@ class ResponseTest extends UnitTestCase
         $data = json_decode($json, true);
         $this->assertTrue($data['success']);
         $this->assertEquals(['key' => 'val'], $data['model']);
-
     }
-
 }

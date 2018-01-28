@@ -17,7 +17,6 @@ use App\Gate\Validator\Validator;
 
 abstract class Controller extends \Phalcon\Mvc\Controller
 {
-
     public function initialize()
     {
     }
@@ -52,6 +51,4 @@ abstract class Controller extends \Phalcon\Mvc\Controller
 
         return $response->handle($result);
     }
-
-
 }

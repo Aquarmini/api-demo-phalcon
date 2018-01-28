@@ -8,8 +8,8 @@
 // +----------------------------------------------------------------------
 namespace Tests\Biz;
 
-use App\Common\HttpClient\TestClient;
-use \UnitTestCase;
+use Tests\Biz\App\Common\HttpClient\TestClient;
+use Tests\UnitTestCase;
 
 /**
  * Class UnitTest
@@ -19,7 +19,7 @@ class HttpClientTest extends UnitTestCase
     public function testBaseCase()
     {
         $res = TestClient::getInstance()->test();
-        $this->assertEquals(1, $res['status']);
-        $this->assertEquals(1, $res['data']['body']['test_client']);
+        $this->assertTrue($res['success']);
+        $this->assertEquals(1, $res['model']['body']['test_client']);
     }
 }

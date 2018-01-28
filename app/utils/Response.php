@@ -19,6 +19,8 @@ class Response
 
         // 记录response日志
         static::log($data);
+
+        $response->setHeader('Access-Control-Allow-Origin', '*');
         return $response->setJsonContent($data);
     }
 
@@ -53,7 +55,9 @@ class Response
     public static function fail($code, $message = null)
     {
         // 避免出现第三方插件有错误码为0的情况
-        if ($code === 0) $code = ErrorCode::$ENUM_SYSTEM_ERROR;
+        if ($code === 0) {
+            $code = ErrorCode::$ENUM_SYSTEM_ERROR;
+        }
         if (empty($message)) {
             $message = ErrorCode::getMessage($code);
         }

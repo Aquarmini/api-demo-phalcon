@@ -26,7 +26,7 @@ class Handler
     private function __construct()
     {
         $this->di = FactoryDefault::getDefault();
-        $this->logger = di('logger')->getLogger('error', Sys::LOG_ADAPTER_FILE);;
+        $this->logger = di('logger')->getLogger('error', Sys::LOG_ADAPTER_FILE);
     }
 
     public static function getInstance()
@@ -47,14 +47,14 @@ class Handler
         $msg = $ex->getMessage() . ' code:' . $ex->getCode() . ' in ' . $ex->getFile() . ' line ' . $ex->getLine() . PHP_EOL . $ex->getTraceAsString();
         $this->logger->error($msg);
         if ($ex instanceof CodeException) {
-            echo Response::fail($ex->getCode(), $ex->getMessage())->getContent();
+            Response::fail($ex->getCode(), $ex->getMessage())->send();
             exit(255);
         }
 
         if (env('APP_DEBUG', false)) {
-            echo Response::fail($ex->getCode(), $ex->getMessage())->getContent();
+            Response::fail($ex->getCode(), $ex->getMessage())->send();
         } else {
-            echo 'Sorry, 服务器内部错误';
+            Response::fail($ex->getCode(), 'Sorry, 服务器内部错误')->send();
         }
         exit(255);
     }
@@ -71,5 +71,4 @@ class Handler
         echo $msg;
         exit(255);
     }
-
 }
