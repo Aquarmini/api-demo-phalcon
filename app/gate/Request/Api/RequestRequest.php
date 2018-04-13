@@ -5,5 +5,4 @@ use App\Gate\Request\Request;
 
 class RequestRequest extends Request
 {
-
 }

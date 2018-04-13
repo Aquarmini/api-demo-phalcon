@@ -5,5 +5,4 @@ use App\Gate\Response\Response;
 
 class TimeoutResponse extends Response
 {
-
 }

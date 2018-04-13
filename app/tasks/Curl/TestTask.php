@@ -10,7 +10,6 @@ use Xin\Cli\Color;
 
 class TestTask extends Task
 {
-
     public function mainAction()
     {
         echo Color::head('Help:') . PHP_EOL;
@@ -87,6 +86,4 @@ class TestTask extends Task
 
         return [$res, $info];
     }
-
 }
-

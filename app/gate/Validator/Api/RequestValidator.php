@@ -10,5 +10,4 @@ class RequestValidator extends Validator
     {
         // TODO: Implement initialize() method.
     }
-
 }

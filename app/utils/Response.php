@@ -41,7 +41,7 @@ class Response
         $logger = $factory->getLogger('response');
         $logger->info($msg);
     }
-    
+
     public static function success($model = null)
     {
         $data = [];

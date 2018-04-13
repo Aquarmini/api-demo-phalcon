@@ -14,7 +14,6 @@ use App\Gate\Validator\Api\TimeoutValidator;
 
 class IndexController extends Controller
 {
-
     public function requestAction()
     {
         return $this->execute(new RequestRequest(), new RequestValidator(), new RequestBusiness(), new RequestResponse());
@@ -24,6 +23,4 @@ class IndexController extends Controller
     {
         return $this->execute(new TimeoutRequest(), new TimeoutValidator(), new TimeoutBusiness(), new TimeoutResponse());
     }
-
 }
-

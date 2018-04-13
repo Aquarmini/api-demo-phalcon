@@ -10,5 +10,4 @@ class TimeoutValidator extends Validator
     {
         // TODO: Implement initialize() method.
     }
-
 }
