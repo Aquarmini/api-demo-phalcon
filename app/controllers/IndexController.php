@@ -8,6 +8,9 @@
 // +----------------------------------------------------------------------
 namespace App\Controllers;
 
+use App\Common\Enums\ErrorCode;
+use App\Common\Exceptions\BizException;
+
 class IndexController extends Controller
 {
     /**
@@ -24,5 +27,10 @@ class IndexController extends Controller
             new \App\Gate\Business\Index\IndexBusiness(),
             new \App\Gate\Response\Index\IndexResponse()
         );
+    }
+
+    public function exceptionAction()
+    {
+        throw new BizException(ErrorCode::$ENUM_SYSTEM_ERROR);
     }
 }

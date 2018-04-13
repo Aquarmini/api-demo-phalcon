@@ -29,7 +29,7 @@ class Response
         /** @var \Phalcon\Http\RequestInterface $request */
         $request = di('request');
         $uri = $request->getURI();
-        $params = $request->get();
+        $params = Request::get();
         $result = $data;
 
         $msg = PHP_EOL;
@@ -41,7 +41,7 @@ class Response
         $logger = $factory->getLogger('response');
         $logger->info($msg);
     }
-
+    
     public static function success($model = null)
     {
         $data = [];
